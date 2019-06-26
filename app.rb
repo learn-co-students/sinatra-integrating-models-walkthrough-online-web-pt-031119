@@ -6,13 +6,14 @@ class App < Sinatra::Base
     erb :index
   end
 
+  
   post '/' do
     text_from_user = params[:user_text]
     
     # pass data from param[user_text] into a new instance of theTextAnalyzer class
     
     # @analyzed_text = TextAnalyzer.new(text_from_user)
-     #the above can shortened to the following
+    #the above can shortened to the following
       @analyzed_text = TextAnalyzer.new(params[:user_text])
  
     erb :results
